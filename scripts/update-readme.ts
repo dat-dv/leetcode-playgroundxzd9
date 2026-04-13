@@ -20,17 +20,17 @@ function updateReadme(): void {
 
   const fallbackTemplate = `# {FOLDER_NAME} - Tên bài toán
 
-## Ý tưởng / Lời giải
-<!-- Viết cách giải thích, approach hoặc notes của bạn vào đây -->
-- 
+## 1. Ý tưởng / Lời giải
 
----
+<!-- Viết cách giải thích, approach hoặc notes của bạn vào đây -->
+
+## 2. Thông tin bài toán
 
 * **Mức độ:** N/A
 * **Chủ đề:** N/A
 * **Nguồn bài:** [LeetCode](https://leetcode.com/)
 
-## Mô tả đề bài
+## 3. Mô tả đề bài
 
 *(Lưu ý: File được tạo tự động bởi pre-commit hook. Khuyên dùng lệnh \`npm run leetcode {FOLDER_NAME}\` để tải được đề bài và ngôn ngữ thay vì file mẫu offline này)*
 `;

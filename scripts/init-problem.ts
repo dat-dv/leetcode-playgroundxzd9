@@ -99,17 +99,17 @@ async function main() {
 
   const readmeContent = `# ${metadata.id} - ${metadata.title}
 
-## Ý tưởng / Lời giải
-<!-- Viết cách giải thích, approach hoặc notes của bạn vào đây -->
-- 
+## 1. Ý tưởng / Lời giải
 
----
+<!-- Viết cách giải thích, approach hoặc notes của bạn vào đây -->
+
+## 2. Thông tin bài toán
 
 * **Mức độ:** ${metadata.difficulty}
 * **Chủ đề:** ${tagsStr}
 * **Nguồn bài:** [LeetCode](${metadata.link})
 
-## Mô tả đề bài
+## 3. Mô tả đề bài
 
 ${cleanContent}
 `;

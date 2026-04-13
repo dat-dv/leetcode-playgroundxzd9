@@ -1,6 +1,6 @@
 # 326 - Power of Three
 
-## Ý tưởng / Lời giải
+## 1. Ý tưởng / Lời giải
 
 <!-- Viết cách giải thích, approach hoặc notes của bạn vào đây -->
 
@@ -9,13 +9,13 @@ Cách giải bài này dùng đệ quy:
 - Recursive case: cứ mỗi lần thì sẽ giảm n = n/3 sau đó gọi lại
 - Base case: n = 1 thì return true, n < 3 thì return false
 
-- ***
+## 2. Thông tin bài toán
 
 - **Mức độ:** Easy
 - **Chủ đề:** Math, Recursion
 - **Nguồn bài:** [LeetCode](https://leetcode.com/problems/power-of-three/)
 
-## Mô tả đề bài
+## 3. Mô tả đề bài
 
 <p>Given an integer <code>n</code>, return <em><code>true</code> if it is a power of three. Otherwise, return <code>false</code></em>.</p>
 

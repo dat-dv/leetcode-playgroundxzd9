@@ -1,16 +1,20 @@
 ## 202 - Happy Number
 
+## 1. Ý tưởng / Lời giải
+
+<!-- Viết cách giải thích, approach hoặc notes của bạn vào đây -->
+
 - Bài này giải bằng cách đệ quy :
   - Base case là 1 hoặc khi quay trở lại đối số (n) đã gặp trước đó
   - Recursive Case là cứ tách đối số ra thành n số và tính tổng bình phương mỗi số
 
----
+## 2. Thông tin bài toán
 
-- Mức độ: Easy
-- Chủ đề: Hash Table, Math, Two Pointers
-- Nguồn bài: [LeetCode](https://leetcode.com/problems/happy-number/)
+- **Mức độ:** Easy
+- **Chủ đề:** Hash Table, Math, Two Pointers
+- **Nguồn bài:** [LeetCode](https://leetcode.com/problems/happy-number/)
 
-## Mô tả đề bài
+## 3. Mô tả đề bài
 
 <p>Write an algorithm to determine if a number <code>n</code> is happy.</p>
 
