@@ -1,5 +1,9 @@
 /* https://leetcode.com/problems/power-of-three/ */
 
-function isPowerOfThree(n: number): boolean {}
+function isPowerOfThree(n: number): boolean {
+  if (n === 1) return true;
+  if (n < 3) return false;
+  return isPowerOfThree(n / 3);
+}
 
-// console.log(yourFunction());
+console.log(isPowerOfThree(27));

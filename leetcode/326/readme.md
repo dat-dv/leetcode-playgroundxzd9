@@ -4,6 +4,11 @@
 
 <!-- Viết cách giải thích, approach hoặc notes của bạn vào đây -->
 
+Cách giải bài này dùng đệ quy:
+
+- Recursive case: cứ mỗi lần thì sẽ giảm n = n/3 sau đó gọi lại
+- Base case: n = 1 thì return true, n < 3 thì return false
+
 - ***
 
 - **Mức độ:** Easy
