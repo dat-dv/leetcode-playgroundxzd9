@@ -1,0 +1,26 @@
+{
+  "name": "leetcode-playgroundxzd9",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx runner.ts",
+    "leetcode": "tsx scripts/init-problem.ts",
+    "test": "tsx scripts/test-readme.ts",
+    "fm": "prettier . --write",
+    "prepare": "husky",
+    "precommit": "npm run test && tsx scripts/update-readme.ts && npx prettier readme.md --write && git add readme.md"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "prettier": "^3.8.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "husky": "^9.1.5",
+    "tsx": "^4.7.1",
+    "typescript": "^5.4.2"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "id": "202",
+  "title": "Happy Number",
+  "difficulty": "Easy",
+  "tags": ["Hash Table", "Math", "Two Pointers"],
+  "link": "https://leetcode.com/problems/happy-number/"
+}
