@@ -1,0 +1,7 @@
+{
+  "id": "2089",
+  "title": "Find Target Indices After Sorting Array",
+  "difficulty": "Easy",
+  "tags": ["Array", "Binary Search", "Sorting"],
+  "link": "https://leetcode.com/problems/find-target-indices-after-sorting-array/"
+}
