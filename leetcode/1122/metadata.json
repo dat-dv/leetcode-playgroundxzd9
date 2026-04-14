@@ -1,0 +1,7 @@
+{
+  "id": "1122",
+  "title": "Relative Sort Array",
+  "difficulty": "Easy",
+  "tags": ["Array", "Hash Table", "Sorting", "Counting Sort"],
+  "link": "https://leetcode.com/problems/relative-sort-array/"
+}
