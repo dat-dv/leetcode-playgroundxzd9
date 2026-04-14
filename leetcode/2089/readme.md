@@ -4,6 +4,13 @@
 
 <!-- Viết cách giải thích, approach hoặc notes của bạn vào đây -->
 
+### 1.1 Cách 1
+
+- Chỉ cần count số lần xuất hiện target -> ta sẽ biét được output là 1 mảng có length = count
+- Xác định count số phần tử < target -> vậy thì có `left` phần tử đứng trước target -> left = 0 -> thì target bắt đầu từ index 0
+
+### 1.2 Cách 2
+
 - Tận dụng JS sort (bên dưới được implements đã tối ưu theo engine) . Độ phức tạp chủ yếu nằm ở mức Complexity:
   - Best: O(n)
   - Average: O(n log n)

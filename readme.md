@@ -26,10 +26,11 @@ Xem chi tiết trong file [WORKFLOW.md](./WORKFLOW.md).
 
 <!-- LEETCODE_START -->
 
-| STT | Bài toán                                                   | Mức độ | Chủ đề                         | Link gốc                                                                           |
-| --- | ---------------------------------------------------------- | ------ | ------------------------------ | ---------------------------------------------------------------------------------- |
-| 1   | [Happy Number](./leetcode/202)                             | Easy   | Hash Table, Math, Two Pointers | [LeetCode](https://leetcode.com/problems/happy-number/)                            |
-| 2   | [Power of Three](./leetcode/326)                           | Easy   | Math, Recursion                | [LeetCode](https://leetcode.com/problems/power-of-three/)                          |
-| 3   | [Find Target Indices After Sorting Array](./leetcode/2089) | Easy   | Array, Binary Search, Sorting  | [LeetCode](https://leetcode.com/problems/find-target-indices-after-sorting-array/) |
+| STT | Bài toán                                                                | Mức độ | Chủ đề                                    | Link gốc                                                                                        |
+| --- | ----------------------------------------------------------------------- | ------ | ----------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| 1   | [Happy Number](./leetcode/202)                                          | Easy   | Hash Table, Math, Two Pointers            | [LeetCode](https://leetcode.com/problems/happy-number/)                                         |
+| 2   | [Power of Three](./leetcode/326)                                        | Easy   | Math, Recursion                           | [LeetCode](https://leetcode.com/problems/power-of-three/)                                       |
+| 3   | [How Many Numbers Are Smaller Than the Current Number](./leetcode/1365) | Easy   | Array, Hash Table, Sorting, Counting Sort | [LeetCode](https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/) |
+| 4   | [Find Target Indices After Sorting Array](./leetcode/2089)              | Easy   | Array, Binary Search, Sorting             | [LeetCode](https://leetcode.com/problems/find-target-indices-after-sorting-array/)              |
 
 <!-- LEETCODE_END -->
