@@ -36,7 +36,7 @@ Xem chi tiết trong file [WORKFLOW.md](./WORKFLOW.md).
 
 Để luyện tập hiệu quả, nên tập trung vào các **LeetCode Patterns** thay vì giải bài ngẫu nhiên:
 
-- [LeetCode Patterns (by Sean Prashad)](https://seanprashad.com/leetcode-patterns) — Danh sách các bài toán kinh điển được phân loại theo kỹ thuật và cấu trúc dữ liệu để nắm vững tư duy giải quyết vấn đề.
+- <a href="https://seanprashad.com/leetcode-patterns" target="_blank" rel="noopener noreferrer">LeetCode Patterns (by Sean Prashad)</a> — Danh sách các bài toán kinh điển được phân loại theo kỹ thuật và cấu trúc dữ liệu để nắm vững tư duy giải quyết vấn đề.
 
 ## Danh sách bài tập đã giải
 
