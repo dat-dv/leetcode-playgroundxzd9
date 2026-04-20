@@ -4,17 +4,27 @@ Repo dùng làm playground để giải thuật toán LeetCode, hỗ trợ cả 
 
 **LeetCode Profile**: [dat-dv](https://leetcode.com/u/dat-dv/)
 
-## Hướng dẫn chạy code
+## Hướng dẫn sử dụng
 
-Chạy script tương tác trong terminal để chọn bài cần chạy:
+### 1. Khởi tạo bài toán mới
+
+Tự động tải thông tin bài toán, tạo thư mục và file boilerplate (TypeScript/JavaScript) từ LeetCode:
 
 ```bash
-npm run dev
+npm run leetcode <ID_BÀI_TOÁN>
+
+# Ví dụ: npm run leetcode 202
 ```
 
-Hoặc chạy trực tiếp một bài cụ thể bằng cách truyền ID bài toán (ví dụ thư mục `202`):
+### 2. Chạy code và kiểm tra kết quả
+
+Sử dụng script để thực thi lời giải của bạn:
 
 ```bash
+# Chạy script tương tác để chọn bài cần thực thi
+npm run dev
+
+# Hoặc chạy trực tiếp bài cụ thể bằng ID
 npm run dev 202
 ```
 
