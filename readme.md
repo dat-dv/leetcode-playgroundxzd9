@@ -22,6 +22,12 @@ npm run dev 202
 
 Xem chi tiết trong file [WORKFLOW.md](./WORKFLOW.md).
 
+## Tài nguyên học tập
+
+Để luyện tập hiệu quả, nên tập trung vào các **LeetCode Patterns** thay vì giải bài ngẫu nhiên:
+
+- [LeetCode Patterns (by Sean Prashad)](https://seanprashad.com/leetcode-patterns) — Danh sách các bài toán kinh điển được phân loại theo kỹ thuật và cấu trúc dữ liệu để nắm vững tư duy giải quyết vấn đề.
+
 ## Danh sách bài tập đã giải
 
 <!-- LEETCODE_START -->
