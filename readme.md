@@ -36,6 +36,7 @@ Xem chi tiết trong file [WORKFLOW.md](./WORKFLOW.md).
 
 Để luyện tập hiệu quả, nên tập trung vào các **LeetCode Patterns** thay vì giải bài ngẫu nhiên:
 
+- [LeetCode Patterns Checklist](./PATTERNS.md) — Theo dõi tiến độ giải các dạng toán quan trọng.
 - <a href="https://seanprashad.com/leetcode-patterns" target="_blank" rel="noopener noreferrer">LeetCode Patterns (by Sean Prashad)</a> — Danh sách các bài toán kinh điển được phân loại theo kỹ thuật và cấu trúc dữ liệu để nắm vững tư duy giải quyết vấn đề.
 
 ## Danh sách bài tập đã giải
@@ -49,9 +50,10 @@ Xem chi tiết trong file [WORKFLOW.md](./WORKFLOW.md).
 | 3   | [Contains Duplicate](./leetcode/217)                                    | Easy   | Array, Hash Table, Sorting                                        | [LeetCode](https://leetcode.com/problems/contains-duplicate/)                                   |
 | 4   | [Missing Number](./leetcode/268)                                        | Easy   | Array, Hash Table, Math, Binary Search, Bit Manipulation, Sorting | [LeetCode](https://leetcode.com/problems/missing-number/)                                       |
 | 5   | [Power of Three](./leetcode/326)                                        | Easy   | Math, Recursion                                                   | [LeetCode](https://leetcode.com/problems/power-of-three/)                                       |
-| 6   | [Squares of a Sorted Array](./leetcode/977)                             | Easy   | Array, Two Pointers, Sorting                                      | [LeetCode](https://leetcode.com/problems/squares-of-a-sorted-array/)                            |
-| 7   | [Relative Sort Array](./leetcode/1122)                                  | Easy   | Array, Hash Table, Sorting, Counting Sort                         | [LeetCode](https://leetcode.com/problems/relative-sort-array/)                                  |
-| 8   | [How Many Numbers Are Smaller Than the Current Number](./leetcode/1365) | Easy   | Array, Hash Table, Sorting, Counting Sort                         | [LeetCode](https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/) |
-| 9   | [Find Target Indices After Sorting Array](./leetcode/2089)              | Easy   | Array, Binary Search, Sorting                                     | [LeetCode](https://leetcode.com/problems/find-target-indices-after-sorting-array/)              |
+| 6   | [Intersection of Two Arrays](./leetcode/349)                            | Easy   | Array, Hash Table, Two Pointers, Binary Search, Sorting           | [LeetCode](https://leetcode.com/problems/intersection-of-two-arrays/)                           |
+| 7   | [Squares of a Sorted Array](./leetcode/977)                             | Easy   | Array, Two Pointers, Sorting                                      | [LeetCode](https://leetcode.com/problems/squares-of-a-sorted-array/)                            |
+| 8   | [Relative Sort Array](./leetcode/1122)                                  | Easy   | Array, Hash Table, Sorting, Counting Sort                         | [LeetCode](https://leetcode.com/problems/relative-sort-array/)                                  |
+| 9   | [How Many Numbers Are Smaller Than the Current Number](./leetcode/1365) | Easy   | Array, Hash Table, Sorting, Counting Sort                         | [LeetCode](https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/) |
+| 10  | [Find Target Indices After Sorting Array](./leetcode/2089)              | Easy   | Array, Binary Search, Sorting                                     | [LeetCode](https://leetcode.com/problems/find-target-indices-after-sorting-array/)              |
 
 <!-- LEETCODE_END -->

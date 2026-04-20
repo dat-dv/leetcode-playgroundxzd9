@@ -3,8 +3,10 @@
 ## 1. Ý tưởng / Lời giải
 
 <!-- Viết cách giải thích, approach hoặc notes của bạn vào đây -->
+
 - Nếu dùng hash table để lưu bài toán này sẽ phải giải với độ phức tạp O(n) space và O(n) time
-- Ý tưởng : Nếu 1 số xuất hiện nhiều hơn 1 nửa thì ta chỉ cần duyệt từ đầu đến cuối để đếm số phần tử, nếu có phần tử trùng nhau thì +1 nếu khác nhau thì -1, nếu count = 0 và chỉ cần count > 1/2 thì dừng 
+- Ý tưởng : Nếu 1 số xuất hiện nhiều hơn 1 nửa thì ta chỉ cần duyệt từ đầu đến cuối để đếm số phần tử, nếu có phần tử trùng nhau thì +1 nếu khác nhau thì -1, nếu count = 0 và chỉ cần count > 1/2 thì dừng
+
 ## 2. Thông tin bài toán
 
 - **Mức độ:** Easy
