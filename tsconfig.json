@@ -12,6 +12,8 @@
     "paths": {
       "@/*": ["*"]
     },
+    "moduleDetection": "force",
+    "noEmitOnError": false,
     "sourceMap": true,
     "outDir": "out"
   },
