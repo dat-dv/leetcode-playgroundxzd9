@@ -39,6 +39,8 @@ export const VALID_LABELS = [
   'Math & Geometry',
   'DSA',
   'Brute Force',
+  'ASCII/Unicode',
+  'Number',
 ];
 
 // --- HELPER FUNCTIONS ---
