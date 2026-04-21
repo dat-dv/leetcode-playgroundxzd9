@@ -1,6 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 import readline from 'readline';
+import matter from 'gray-matter';
 
 // --- CONFIGURATION ---
 export const TARGET_DIR = path.join(process.cwd(), 'leetcode');
@@ -10,6 +11,8 @@ export const REPO = 'dat-dv/leetcode-playgroundxzd9';
 export const README_PATH = path.join(process.cwd(), 'readme.md');
 export const START_MARKER = '<!-- LEETCODE_START -->';
 export const END_MARKER = '<!-- LEETCODE_END -->';
+export const TECH_DIR = path.join(process.cwd(), 'problem-solving-tech');
+export const ISSUE_ROOTS = ['leetcode/', 'problem-solving-tech/'];
 
 export const VALID_LABELS = [
   'enhancement',
@@ -34,6 +37,8 @@ export const VALID_LABELS = [
   '2-D DP',
   'Bit Manipulation',
   'Math & Geometry',
+  'DSA',
+  'Brute Force',
 ];
 
 // --- HELPER FUNCTIONS ---
@@ -52,30 +57,16 @@ export async function askQuestion(query: string): Promise<string> {
 }
 
 export function parseMarkdown(content: string) {
-  const lines = content.split('\n');
-  let metadata: any = {};
-  let bodyLines: string[] = [];
-  let inMetadata = false;
+  const { data, content: body } = matter(content);
+  return { metadata: data, body: body.trim() };
+}
 
-  for (const line of lines) {
-    if (line.trim() === '---') {
-      inMetadata = !inMetadata;
-      continue;
-    }
-    if (inMetadata) {
-      const [key, ...valueParts] = line.split(':');
-      if (key && valueParts.length) {
-        metadata[key.trim()] = valueParts
-          .join(':')
-          .replace(/"/g, '')
-          .replace(/'/g, '')
-          .trim();
-      }
-    } else {
-      bodyLines.push(line);
-    }
-  }
-  return { metadata, body: bodyLines.join('\n').trim() };
+export function updateMarkdown(
+  content: string,
+  newMetadata: Record<string, any>
+) {
+  const { data, content: body } = matter(content);
+  return matter.stringify(body, { ...data, ...newMetadata });
 }
 
 export function getAvailableExamples(): string[] {

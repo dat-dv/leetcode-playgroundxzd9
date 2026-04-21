@@ -1,14 +1,15 @@
 import fs from 'fs';
 import path from 'path';
 import { execSync } from 'child_process';
-import { VALID_LABELS, parseMarkdown } from '../utils';
+import { VALID_LABELS, parseMarkdown, ISSUE_ROOTS } from '../utils';
 
 async function verify() {
   const stagedFiles = execSync('git diff --cached --name-only')
     .toString()
     .split('\n');
   const dirtyIssues = stagedFiles.filter(
-    (f) => f.endsWith('issue.md') && f.startsWith('leetcode/')
+    (f) =>
+      f.endsWith('issue.md') && ISSUE_ROOTS.some((root) => f.startsWith(root))
   );
 
   if (dirtyIssues.length === 0) return;
