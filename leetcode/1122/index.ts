@@ -3,8 +3,8 @@
 function relativeSortArray(arr1: number[], arr2: number[]): number[] {
   const mapObj = new Map<number, number>();
   arr2.forEach((i) => mapObj.set(i, 0));
-  const notPlacedInArr2 = [];
-  const r = [];
+  const notPlacedInArr2: number[] = [];
+  const r: number[] = [];
 
   arr1.map((i) => {
     const found = mapObj.has(i);

@@ -13,10 +13,13 @@
       "@/*": ["*"]
     },
     "moduleDetection": "force",
+    "isolatedModules": true,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
     "noEmitOnError": false,
     "sourceMap": true,
     "outDir": "out"
   },
-  "include": ["runner.ts", "scripts/**/*", "leetcode/**/*"],
+  "include": ["scripts/run-dev.ts", "scripts/**/*", "leetcode/**/*"],
   "exclude": ["node_modules"]
 }

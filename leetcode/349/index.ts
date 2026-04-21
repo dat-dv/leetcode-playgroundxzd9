@@ -1,17 +1,19 @@
 /* https://leetcode.com/problems/intersection-of-two-arrays/ */
 
-function intersection(nums1: number[], nums2: number[]): number[] {
+const intersection = (nums1: number[], nums2: number[]): number[] => {
   const set1 = new Set(nums1);
-  const result = [];
-  nums2.forEach((i) => {
-    if (set1.has(i)) {
-      result.push(i);
-      set1.delete(i);
+  const result: number[] = [];
+
+  nums2.forEach((num) => {
+    if (set1.has(num)) {
+      result.push(num);
+      set1.delete(num);
     }
   });
-  return result;
-}
 
-const nums1 = [1, 2, 2, 1, 3, 4, 5, 6, 7, 8, 9, 10];
-const nums2 = [2, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-console.log(intersection(nums1, nums2));
+  return result;
+};
+
+const n1 = [1, 2, 2, 1, 3, 4, 5, 6, 7, 8, 9, 10];
+const n2 = [2, 2];
+console.log(intersection(n1, n2));

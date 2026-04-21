@@ -3,8 +3,11 @@ import fs from 'fs';
 import path from 'path';
 import readline from 'readline';
 import { spawnSync } from 'child_process';
-import { TARGET_DIR, DEFAULT_ENTRY_POINTS } from './scripts/core/constants';
-import { getAvailableExamples } from './scripts/core/utils';
+import {
+  TARGET_DIR,
+  DEFAULT_ENTRY_POINTS,
+  getAvailableExamples,
+} from './utils';
 
 dotenv.config();
 
@@ -21,7 +24,6 @@ function run(exampleName: string): boolean {
 
   if (!targetPath) {
     console.log(`\n❌ Lỗi: Không tìm thấy bài giải mang ID ${exampleName}`);
-    console.log(`\n❌ Nhấn Ctrl + C | Cmd + C để thoát`);
     return false;
   }
 
@@ -38,6 +40,10 @@ function promptUser() {
     output: process.stdout,
   });
 
+  const examples = getAvailableExamples();
+  console.log('\n📚 Các bài giải có sẵn trong máy:');
+  examples.forEach((ex) => console.log(`- ${ex}`));
+
   rl.question('\nNhập ID bài giải bạn muốn chạy: ', (answer) => {
     const input = answer.trim();
     if (input && run(input)) {
@@ -49,14 +55,8 @@ function promptUser() {
 }
 
 const inputArg = process.argv[2];
-
 if (inputArg) {
-  if (!run(inputArg)) {
-    process.exit(1);
-  }
+  if (!run(inputArg)) process.exit(1);
 } else {
-  const examples = getAvailableExamples();
-  console.log('\n📚 Các bài giải có sẵn trong máy:');
-  examples.forEach((ex) => console.log(`- ${ex}`));
   promptUser();
 }

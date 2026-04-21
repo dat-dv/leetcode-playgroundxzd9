@@ -1,27 +1,35 @@
-# Quy trình làm việc
+# Quy trình làm việc (Updated)
 
-Sơ đồ quá trình tạo và commit một bài giải mới:
+Sơ đồ quá trình từ khi bắt đầu bài toán đến khi đồng bộ kiến thức lên GitHub:
 
 ```mermaid
 graph TD
-    A[Bắt đầu bài toán mới] --> B(Tạo thư mục trong /leetcode)
-    B --> C{Thêm readme.md?}
-    C -->|Thêm `# Tên bài`| D[Tạo file index.js / index.ts]
-    C -->|Bỏ qua| D
-    D --> E[Viết code logic]
-    E --> F>"Chạy thử: npm run dev [ID]"]
-    F --> G{Đã ok chưa?}
-    G -->|Chưa ok| E
-    G -->|Hoàn tất| H[Git add & Commit]
-    H --> I[[Pre-commit hook chạy]]
-    I --> J[Tự động cập nhật danh sách ở README.md]
+    A[Bắt đầu bài toán mới] --> B["npm run new [ID]"]
+    B --> C["Tự động tạo: Folder, index.ts, readme.md, metadata & issue.md"]
+    C --> D[Viết code logic và Ghi chú vào issue.md]
+    D --> E["Chạy thử: npm run dev [ID]"]
+    E --> F{Đã ok chưa?}
+    F -->|Chưa ok| D
+    F -->|Hoàn tất| G[Git add . & Commit]
+    G --> H[[Pre-commit hook chạy]]
+    H --> I[Verify Labels & Cập nhật README tổng]
+    I --> J[Sync Issue lên GitHub - Create/Update]
     J --> K[Prettier tự động format]
     K --> L((Hoàn thành))
 ```
 
-## Các bước thực hiện:
+## Các bước thực hiện chi tiết:
 
-1. **Khởi tạo tự động:** Chạy lệnh `npm run leetcode <ID>` (ví dụ: `npm run leetcode 202`). Hệ thống sẽ gọi API LeetCode để lấy đề bài, tạo sẵn thư mục `leetcode/202`, file `readme.md`, `metadata.json` chứa format cực chuẩn và file `index.ts` có sẵn code khởi tạo!
-2. **Viết code:** Mở `leetcode/<ID>/index.ts` và bắt đầu viết code logic.
-3. **Chạy thử code:** Dùng lệnh `npm run dev <ID>` để chạy test bằng terminal.
-4. **Commit:** Sau khi code chạy đúng, chỉ việc Git Add và Commit. Hệ thống (qua Pre-commit hook) sẽ tự động chèn dữ liệu vào bảng danh sách bài ở file `readme.md` tổng (với đầy đủ các cột như Độ khó, Tags, Link gốc) và format lại đẹp mắt.
+1.  **Khởi tạo tự động:** Chạy lệnh `npm run new <ID>` (ví dụ: `npm run new 49`). Hệ thống sẽ gọi API LeetCode để lấy đề bài, tạo sẵn thư mục, file code, metadata và đặc biệt là file **`issue.md` (Research Note)** theo chuẩn 5W1H.
+2.  **Viết code & Nghiên cứu:**
+    - Giải toán trong `index.ts`.
+    - Ghi chú lại các điểm mấu chốt (Insight) hoặc lỗi sai (Caveats) vào file `issue.md`.
+3.  **Chạy thử code:** Dùng lệnh `npm run dev <ID>` để chạy test ngay trên terminal.
+4.  **Đồng bộ & Commit:**
+    - Sau khi `git add` và `commit`, hệ thống sẽ tự quét các file `issue.md` có thay đổi.
+    - **Smart Sync:** Chỉ đồng bộ những bài bạn vừa sửa lên GitHub Issue (Tạo mới hoặc Cập nhật tùy bài).
+    - **Auto Index:** Bảng danh sách bài ở trang chủ `README.md` sẽ tự động cập nhật đầy đủ thông tin.
+
+---
+
+_Mẹo: File `issue.md` vẫn được giữ tại local để anh tra cứu nhanh mà không cần lên web._ 🎩🚀🔥

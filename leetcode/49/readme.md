@@ -8,7 +8,7 @@
 - Đề bài chỉ cho lowercase english charcode nên nó sẽ là [97-122]
 - Ta có thể dùng 1 array có 26 phần tử để lưu số lần xuất hiện của mỗi ký tự.
 - Sau đó ta có thể dùng 1 map để lưu trữ các từ có cùng số lần xuất hiện của mỗi ký tự.
-- Nếu như 
+- Nếu như
 
 ## 2. Thông tin bài toán
 

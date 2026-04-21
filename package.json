@@ -3,20 +3,24 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx runner.ts",
-    "leetcode": "tsx scripts/init-problem.ts",
-    "new": "tsx scripts/init-problem.ts",
-    "lc": "tsx scripts/init-problem.ts",
-    "test": "tsx scripts/test-readme.ts",
+    "dev": "tsx scripts/run-dev.ts",
+    "leetcode": "tsx scripts/create-new-leetcode-challenge.ts",
+    "new": "tsx scripts/create-new-leetcode-challenge.ts",
+    "lc": "tsx scripts/create-new-leetcode-challenge.ts",
+    "issue": "tsx scripts/github/create.ts",
+    "verify-labels": "tsx scripts/github/verify.ts",
+    "sync-issues": "tsx scripts/github/sync.ts",
+    "test": "tsx scripts/test-readme-integrity.ts",
     "fm": "prettier . --write",
     "prepare": "husky",
-    "precommit": "npm run test && tsx scripts/update-readme.ts && npx prettier readme.md --write && git add readme.md"
+    "precommit": "tsx scripts/precommit.ts"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "dotenv": "^17.4.2",
+    "gray-matter": "^4.0.3",
     "prettier": "^3.8.2"
   },
   "devDependencies": {

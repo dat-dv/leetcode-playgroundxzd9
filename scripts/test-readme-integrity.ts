@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { README_PATH, START_MARKER, END_MARKER } from './core/constants';
+import { README_PATH, START_MARKER, END_MARKER } from './utils';
 
 function testReadmeIntegrity(): void {
   console.log('🧪 Chạy test: Kiểm tra tính hợp lệ của file readme.md...');
