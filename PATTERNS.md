@@ -2,6 +2,8 @@
 
 Dưới đây là tổng hợp các dạng bài tập phổ biến trên LeetCode, được phân loại theo các kỹ thuật và cấu trúc dữ liệu cốt lõi. Tài liệu này giúp bạn hệ thống lại kiến thức và theo dõi lộ trình luyện tập của mình.
 
+Tham khảo: https://neetcode.io/roadmap
+
 ---
 
 ## 🚀 Các chủ đề chính
