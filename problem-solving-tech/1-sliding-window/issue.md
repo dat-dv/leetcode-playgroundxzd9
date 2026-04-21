@@ -1,7 +1,7 @@
 ---
 title: '[LEARN] #1 - Sliding Window'
 labels: 'Sliding Window, DSA'
-issueId: 3
+issueId: 5
 ---
 
 ### 🎯 1. WHAT & WHY (Bản chất & Tại sao)

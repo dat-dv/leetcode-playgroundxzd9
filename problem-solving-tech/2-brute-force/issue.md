@@ -1,7 +1,7 @@
 ---
 title: '[LEARN] #2 - Brute Force'
 labels: 'Brute Force, DSA'
-issueId: 4
+issueId: 6
 ---
 
 ### 🎯 1. WHAT & WHY (Bản chất & Tại sao)
