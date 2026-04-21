@@ -70,6 +70,14 @@ async function main() {
     process.exit(1);
   }
 
+  const folderPath = path.join(TARGET_DIR, arg);
+  if (fs.existsSync(folderPath)) {
+    console.error(
+      `❌ Lỗi: Bài toán ${arg} đã tồn tại! Vui lòng kiểm tra thư mục leetcode/${arg}.`
+    );
+    process.exit(1);
+  }
+
   console.log(`⏳ Đang dò tìm thông tin cho bài toán số ${arg}...`);
   const allProblems = await fetchAllProblems();
   const problem = allProblems.find(
