@@ -15,50 +15,31 @@ import {
 const GH_TOKEN = process.env.GH_TOKEN;
 
 async function sync() {
-  // Lấy danh sách các file đang được git add (Staged files)
-  const stagedFiles = execSync('git diff --cached --name-only')
+  // Lấy tất cả các file có thay đổi (staged, unstaged, untracked)
+  const staged = execSync('git diff --cached --name-only')
     .toString()
-    .split('\n');
-  let dirtyIssues = stagedFiles.filter(
+    .split('\n')
+    .filter(Boolean);
+  const modified = execSync('git diff --name-only')
+    .toString()
+    .split('\n')
+    .filter(Boolean);
+  const untracked = execSync('git ls-files --others --exclude-standard')
+    .toString()
+    .split('\n')
+    .filter(Boolean);
+
+  const allDirtyFiles = Array.from(
+    new Set([...staged, ...modified, ...untracked])
+  );
+
+  let dirtyIssues = allDirtyFiles.filter(
     (f) =>
       f.endsWith('issue.md') && ISSUE_ROOTS.some((root) => f.startsWith(root))
   );
 
-  // Nếu không có file nào đang staged, quét toàn bộ thư mục để tìm issue chưa sync
   if (dirtyIssues.length === 0) {
-    console.log('🔍 Không tìm thấy file staged. Đang quét toàn bộ thư mục...');
-    for (const root of ISSUE_ROOTS) {
-      const rootPath = path.join(process.cwd(), root);
-      if (!fs.existsSync(rootPath)) continue;
-
-      const items = fs.readdirSync(rootPath);
-      for (const item of items) {
-        const folderPath = path.join(rootPath, item);
-        if (fs.lstatSync(folderPath).isDirectory()) {
-          const issuePath = path.join(folderPath, 'issue.md');
-          if (fs.existsSync(issuePath)) {
-            // Check nếu chưa có ID thì mới coi là dirty
-            const fileContent = fs.readFileSync(issuePath, 'utf8');
-            const { metadata } = parseMarkdown(fileContent);
-            const metadataPath = path.join(folderPath, 'metadata.json');
-            let hasId = !!metadata.issueId;
-
-            if (!hasId && fs.existsSync(metadataPath)) {
-              const meta = JSON.parse(fs.readFileSync(metadataPath, 'utf8'));
-              hasId = !!meta.githubIssueNumber;
-            }
-
-            if (!hasId) {
-              dirtyIssues.push(path.relative(process.cwd(), issuePath));
-            }
-          }
-        }
-      }
-    }
-  }
-
-  if (dirtyIssues.length === 0) {
-    console.log('⏭️ Không tìm thấy Issue nào cần đồng bộ. Nghỉ ngơi thôi!');
+    console.log('⏭️ Không tìm thấy Issue nào có thay đổi. Nghỉ ngơi thôi!');
     return;
   }
 
@@ -85,7 +66,8 @@ async function sync() {
     }
 
     const labels = metadata.labels?.split(',').map((l: any) => l.trim()) || [];
-    const payload = { title: metadata.title, body, labels };
+    const [owner] = REPO.split('/');
+    const payload = { title: metadata.title, body, labels, assignees: [owner] };
 
     if (issueNumber) {
       console.log(
