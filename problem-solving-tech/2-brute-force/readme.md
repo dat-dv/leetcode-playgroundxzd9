@@ -13,7 +13,7 @@ Thuật toán Brute Force là thuật toán vét cạn, có nghĩa là thay vì 
 
 **Bài toán:** Bạn quên mật khẩu vali có 3 chữ số.
 
-- **Brute Force:** Bạn thử từ `000`, `001`, `002`... cho tới `999`.
+- Brute Force: Bạn thử từ `000`, `001`, `002`... cho tới `999`.
 - Chắc chắn bạn sẽ mở được vali, nhưng sẽ mất thời gian nếu mật khẩu là `999`.
 
 ## 📝 Quy tắc ghi nhớ
