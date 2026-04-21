@@ -13,7 +13,7 @@ issueId: 7
 
 ### 💡 2. PATTERN QUESTIONS (Các bài toán vận dụng)
 
-- Kiểm tra string có liên tiếp hay không ?
+- Kiểm tra string có liên tiếp hay không ? [1249](https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/description/)
 
 ### 🔗 3. REFERENCE
 

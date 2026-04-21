@@ -3,26 +3,17 @@ title: '[LEARN] #{{id}} - {{title}}'
 labels: Arrays & Hashing
 ---
 
+# {{title}}
+
 ### 🎯 1. WHAT & WHY (Bản chất & Tại sao)
 
-- Bài này thực chất là dạng gì? Tại sao pattern này lại là "chìa khóa"?
+- Tại sao kỹ thuật này tồn tại?
+- Tại sao pattern này lại là "chìa khóa" để giải quyết vấn đề?
 
-### 💡 2. THE INSIGHT (Điểm mấu chốt)
+### 💡 2. PATTERN QUESTIONS (Các bài toán vận dụng)
 
-- "Aha! moment" nằm ở đâu? (Insight giúp ta tối ưu nằm ở chỗ nào?)
+- Danh sách các bài toán vận dụng kỹ thuật này.
 
-### 🛠️ 3. HOW & EDGE CASES (Triển khai & Lưu ý)
+### 🔗 3. REFERENCE
 
-- Các bước giải quyết nhanh và những "bẫy" (edge cases) cần tránh.
-
-### 📝 4. NOTE
-
-- Các ý tưởng khác hoặc đúc kết cá nhân.
-
-### 🔗 5. REFERENCE
-
-- Link video hướng dẫn, bài blog hoặc topic Discussion hay.
-
----
-
-<!-- Labels: Arrays & Hashing, Two Pointers, Stack, Binary Search, Sliding Window, Linked List, Trees, Tries, Backtracking, Heap / Priority Queue, Graphs, 1-D DP, Intervals, Greedy, Advanced Graphs, 2-D DP, Bit Manipulation, Math & Geometry -->
+- Tài liệu tham khảo, bài viết hoặc video hướng dẫn.
