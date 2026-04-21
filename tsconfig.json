@@ -11,7 +11,9 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["*"]
-    }
+    },
+    "sourceMap": true,
+    "outDir": "out"
   },
   "include": ["runner.ts", "scripts/**/*", "leetcode/**/*"],
   "exclude": ["node_modules"]
