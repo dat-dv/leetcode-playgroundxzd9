@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import readline from 'readline';
+import { execSync } from 'child_process';
 
 const TARGET_DIR = path.join(process.cwd(), 'leetcode');
 
@@ -98,10 +99,7 @@ async function main() {
     process.exit(1);
   }
 
-  const folderPath = path.join(TARGET_DIR, arg);
-  if (!fs.existsSync(folderPath)) {
-    fs.mkdirSync(folderPath, { recursive: true });
-  }
+  fs.mkdirSync(folderPath, { recursive: true });
 
   // 1. Tạo file metadata.json
   const metadata = {
@@ -159,12 +157,11 @@ ${cleanContent}
     fs.writeFileSync(indexPath, finalCode);
   }
 
-  // 4. Format lại toàn bộ dư án (đảm bảo file mardown / json / ts đều ăn chuẩn)
+  // 4. Format lại toàn bộ dự án
   try {
-    const { execSync } = require('child_process');
     execSync(`npm run fm`, { stdio: 'ignore' });
   } catch (err) {
-    // Không có script fm thì bỏ qua
+    // Bỏ qua nếu lệnh format lỗi
   }
 
   console.log(

@@ -1,0 +1,7 @@
+{
+  "id": "278",
+  "title": "First Bad Version",
+  "difficulty": "Easy",
+  "tags": ["Binary Search", "Interactive"],
+  "link": "https://leetcode.com/problems/first-bad-version/"
+}
