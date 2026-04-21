@@ -1,3 +1,9 @@
+---
+labels: ASCII/Unicode, Number
+title: '[LEARN] #3 - String & CharCode Patterns'
+issueId: 7
+---
+
 # String & CharCode (ASCII/Unicode Number)
 
 ### 🎯 1. WHAT & WHY (Bản chất & Tại sao)

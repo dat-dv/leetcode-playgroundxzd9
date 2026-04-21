@@ -22,7 +22,15 @@ async function verify() {
     if (fs.existsSync(issuePath)) {
       const { metadata } = parseMarkdown(fs.readFileSync(issuePath, 'utf8'));
       const labels =
-        metadata.labels?.split(',').map((l: any) => l.trim()) || [];
+        metadata.labels
+          ?.split(',')
+          .map((l: any) => l.trim())
+          .filter(Boolean) || [];
+
+      if (labels.length === 0) {
+        console.error(`❌ Issue tại ${relativePath} đang thiếu nhãn (labels)!`);
+        hasError = true;
+      }
 
       labels.forEach((l: any) => {
         if (!VALID_LABELS.includes(l)) {
