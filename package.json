@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "tsx runner.ts",
     "leetcode": "tsx scripts/init-problem.ts",
+    "new": "tsx scripts/init-problem.ts",
+    "lc": "tsx scripts/init-problem.ts",
     "test": "tsx scripts/test-readme.ts",
     "fm": "prettier . --write",
     "prepare": "husky",

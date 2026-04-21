@@ -1,7 +1,21 @@
 import fs from 'fs';
 import path from 'path';
+import readline from 'readline';
 
 const TARGET_DIR = path.join(process.cwd(), 'leetcode');
+
+async function askQuestion(query: string): Promise<string> {
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  });
+  return new Promise((resolve) =>
+    rl.question(query, (ans) => {
+      rl.close();
+      resolve(ans.trim());
+    })
+  );
+}
 
 async function fetchAllProblems() {
   const res = await fetch('https://leetcode.com/api/problems/all/');
@@ -45,9 +59,14 @@ function getTemplateCode(
 }
 
 async function main() {
-  const arg = process.argv[2];
+  let arg = process.argv[2];
+
   if (!arg) {
-    console.error('❌ Vui lòng truyền ID bài toán, ví dụ: npm run fetch 202');
+    arg = await askQuestion('❓ Nhập ID bài toán bạn muốn khởi tạo: ');
+  }
+
+  if (!arg) {
+    console.error('❌ ID không được để trống!');
     process.exit(1);
   }
 
