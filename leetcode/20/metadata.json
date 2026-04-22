@@ -1,0 +1,8 @@
+{
+  "id": "20",
+  "title": "Valid Parentheses",
+  "difficulty": "Easy",
+  "tags": ["String", "Stack"],
+  "link": "https://leetcode.com/problems/valid-parentheses/",
+  "githubIssueNumber": 9
+}
