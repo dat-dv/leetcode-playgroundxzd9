@@ -10,6 +10,7 @@ import {
   parseMarkdown,
   ISSUE_ROOTS,
   updateMarkdown,
+  TEMPLATE_DIR,
 } from '../utils';
 
 const GH_TOKEN = process.env.GH_TOKEN;
@@ -53,6 +54,26 @@ async function sync() {
     let problemMeta: any = {};
     if (fs.existsSync(metadataPath)) {
       problemMeta = JSON.parse(fs.readFileSync(metadataPath, 'utf8'));
+    }
+
+    // --- KIỂM TRA NỘI DUNG VỚI TEMPLATE ---
+    const templatePath = path.join(TEMPLATE_DIR, 'issue.md');
+    if (fs.existsSync(templatePath)) {
+      const id = path.basename(folderPath);
+      const title = problemMeta.title || 'Unresolved Problem';
+      let templateContent = fs.readFileSync(templatePath, 'utf8');
+
+      // Giả lập nội dung template sau khi thay thế id và title
+      const { body: templateBody } = parseMarkdown(
+        templateContent.replace(/{{id}}/g, id).replace(/{{title}}/g, title)
+      );
+
+      if (body.trim() === templateBody.trim()) {
+        console.log(
+          `⏭️ Bỏ qua ${relativePath} vì nội dung chưa thay đổi so với template.`
+        );
+        continue;
+      }
     }
 
     // Lấy issue number từ metadata hoặc frontmatter
