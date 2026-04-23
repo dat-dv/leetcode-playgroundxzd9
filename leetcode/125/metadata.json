@@ -1,0 +1,7 @@
+{
+  "id": "125",
+  "title": "Valid Palindrome",
+  "difficulty": "Easy",
+  "tags": ["Two Pointers", "String"],
+  "link": "https://leetcode.com/problems/valid-palindrome/"
+}
