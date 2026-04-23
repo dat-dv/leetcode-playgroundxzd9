@@ -4,12 +4,16 @@
 
 <!-- Viết idea vào đây -->
 
+### Cách 1:
+
 - Bài này có 1 điểm cần chú ý:
   - "A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters"
   - Tức là "A phrase is a palindrome" là 1 chuỗi đối xứng, ban đầu chuỗi input thô sẽ gồm nhiều kí tự -> cần chuyển đổi bằng cách remove đi các kí tự đặc biệt và chuyển hết về chữ thường, lưu ý **không remove số | all non-alphanumeric characters** chấp nhận chữ và số.
   - Sau khi đã làm sạch chuỗi -> tiến hành so sánh 2 đầu vào và kiểm tra có đối xứng không.
 - Bài này giải bằng cách dùng regex để remove các kí tự không cần thiết.
 - Sau đó dùng 2 con trỏ để so sánh 2 đầu vào và kiểm tra có đối xứng không.
+
+### Cách 2:
 
 ## 2. Thông tin bài toán
 
