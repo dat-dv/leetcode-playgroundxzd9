@@ -11,8 +11,8 @@ export const REPO = 'dat-dv/leetcode-playgroundxzd9';
 export const README_PATH = path.join(process.cwd(), 'readme.md');
 export const START_MARKER = '<!-- LEETCODE_START -->';
 export const END_MARKER = '<!-- LEETCODE_END -->';
-export const TECH_DIR = path.join(process.cwd(), 'problem-solving-tech');
-export const ISSUE_ROOTS = ['leetcode/', 'problem-solving-tech/'];
+export const TECH_DIR = path.join(process.cwd(), 'problem');
+export const ISSUE_ROOTS = ['leetcode/', 'problem/'];
 
 export const VALID_LABELS = [
   'enhancement',
@@ -79,4 +79,21 @@ export function getAvailableExamples(): string[] {
         fs.lstatSync(path.join(TARGET_DIR, f)).isDirectory() && /^\d+$/.test(f)
     )
     .sort((a, b) => parseInt(a) - parseInt(b));
+}
+
+export function getProblemFiles(
+  dir = TECH_DIR,
+  fileList: string[] = []
+): string[] {
+  if (!fs.existsSync(dir)) return [];
+  const files = fs.readdirSync(dir);
+  for (const file of files) {
+    const filePath = path.join(dir, file);
+    if (fs.statSync(filePath).isDirectory()) {
+      getProblemFiles(filePath, fileList);
+    } else if (file.endsWith('.ts')) {
+      fileList.push(path.relative(TECH_DIR, filePath));
+    }
+  }
+  return fileList;
 }

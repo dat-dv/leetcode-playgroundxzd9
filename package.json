@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "tsx scripts/run-dev.ts",
+    "devp": "tsx scripts/run-dev.ts p",
     "leetcode": "tsx scripts/create-new-leetcode-challenge.ts",
     "new": "tsx scripts/create-new-leetcode-challenge.ts",
     "lc": "tsx scripts/create-new-leetcode-challenge.ts",

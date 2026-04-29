@@ -5,5 +5,8 @@
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 0,
   "javascript.validate.enable": false,
-  "typescript.validate.enable": false
+  "typescript.validate.enable": false,
+  "code-runner.executorMap": {
+    "typescript": "npx tsx"
+  }
 }

@@ -6,7 +6,7 @@ async function main() {
   const id =
     process.argv[2] ||
     (await askQuestion('❓ Nhập ID bài toán muốn tạo issue: '));
-  // Tìm xem ID này nằm ở root nào (leetcode/ hay problem-solving-tech/)
+  // Tìm xem ID này nằm ở root nào (leetcode/ hay problem/)
   let folderPath = '';
   for (const root of ISSUE_ROOTS) {
     const checkPath = path.join(process.cwd(), root, id);
