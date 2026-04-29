@@ -13,6 +13,7 @@
     "sync-issues": "tsx scripts/github/sync.ts",
     "test": "tsx scripts/test-readme-integrity.ts",
     "fm": "prettier . --write",
+    "man": "tsx scripts/man.ts",
     "prepare": "husky",
     "precommit": "tsx scripts/precommit.ts"
   },
