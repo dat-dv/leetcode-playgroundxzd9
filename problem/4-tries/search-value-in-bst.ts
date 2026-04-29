@@ -2,60 +2,67 @@ import TreeNode from './utils/tree-node';
 import TreePrinter from './utils/printer';
 
 const initBST = () => {
-  const root = new TreeNode(83);
-  const node3 = new TreeNode(32);
-  const node10 = new TreeNode(1120);
-  const node1 = new TreeNode(11);
-  const node6 = new TreeNode(622);
-  const node14 = new TreeNode(114);
-  const node4 = new TreeNode(421);
-  const node7 = new TreeNode(127);
-  const node0 = new TreeNode(5);
-  const node2 = new TreeNode(25);
-  const node13 = new TreeNode(105);
-  const node15 = new TreeNode(150);
-  const node4_left = new TreeNode(400);
-  const node7_right = new TreeNode(130);
-  const node_0_left = new TreeNode(1);
-  const node_0_right = new TreeNode(9);
-  const node_2_right = new TreeNode(29);
-  const node_13_left = new TreeNode(99);
-  const node_400_left = new TreeNode(350);
-  const node_400_right = new TreeNode(410);
-  const node_130_left = new TreeNode(128);
-  const node_350_left = new TreeNode(310);
+  // Định nghĩa các Node theo thứ tự tăng dần (giúp dễ hình dung)
+  const n1 = new TreeNode(1);
+  const n5 = new TreeNode(5);
+  const n9 = new TreeNode(9);
+  const n11 = new TreeNode(11);
+  const n25 = new TreeNode(25);
+  const n29 = new TreeNode(29);
+  const n32 = new TreeNode(32);
+  const n83 = new TreeNode(83);
+  const n99 = new TreeNode(99);
+  const n105 = new TreeNode(105);
+  const n114 = new TreeNode(114);
+  const n127 = new TreeNode(127);
+  const n128 = new TreeNode(128);
+  const n130 = new TreeNode(130);
+  const n150 = new TreeNode(150);
+  const n310 = new TreeNode(310);
+  const n350 = new TreeNode(350);
+  const n400 = new TreeNode(400);
+  const n410 = new TreeNode(410);
+  const n421 = new TreeNode(421);
+  const n622 = new TreeNode(622);
+  const n1120 = new TreeNode(1120);
 
-  root.left = node3;
-  root.right = node10;
+  const root = n350;
 
-  node3.left = node1;
-  node3.right = node6;
+  // 1. Nhánh trái của Root (Các giá trị < 350)
+  root.left = n32;
 
-  node10.left = null;
-  node10.right = node14;
+  n32.left = n11;
+  n32.right = n128;
 
-  node6.left = node4;
-  node6.right = node7;
+  n11.left = n5;
+  n11.right = n25;
 
-  node1.left = node0;
-  node1.right = node2;
+  n5.left = n1;
+  n5.right = n9;
+  n25.right = n29;
 
-  node14.left = node13;
-  node14.right = node15;
+  n128.left = n127;
+  n128.right = n130;
 
-  node4.left = node4_left;
-  node7.right = node7_right;
+  n127.left = n105;
 
-  node0.left = node_0_left;
-  node0.right = node_0_right;
-  node2.right = node_2_right;
-  node13.left = node_13_left;
+  n105.left = n99;
+  n105.right = n114;
 
-  node4_left.left = node_400_left;
-  node4_left.right = node_400_right;
+  n99.left = n83;
 
-  node7_right.left = node_130_left;
-  node_400_left.left = node_350_left;
+  n130.right = n310;
+  n310.left = n150;
+
+  // 2. Nhánh phải của Root (Các giá trị > 350)
+  root.right = n400;
+
+  n400.right = n622;
+
+  n622.left = n421;
+  n622.right = n1120;
+
+  n421.left = n410;
 
   return root;
 };
