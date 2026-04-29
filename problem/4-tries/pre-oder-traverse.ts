@@ -26,7 +26,7 @@ const initTree = () => {
 };
 
 const root = initTree();
-TreePrinter.print(root);
+TreePrinter.print(root, 'pre-oder-traverse');
 
 class Solution {
   execute(node: TreeNode) {

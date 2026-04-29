@@ -64,20 +64,34 @@ function printAsTable(items: string[], cols: number) {
   console.table(tableData);
 }
 
-function handleProblemSelection(rl?: readline.Interface) {
+function handleProblemSelection(rl?: readline.Interface, defaultArg?: string) {
   const problemFiles = getProblemFiles();
+
+  if (problemFiles.length === 0) {
+    console.log('\n❌ Không có file .ts nào trong thư mục problem/');
+    if (rl) rl.close();
+    return;
+  }
+
+  if (defaultArg) {
+    const idx = parseInt(defaultArg.trim(), 10) - 1;
+    if (!isNaN(idx) && problemFiles[idx]) {
+      runProblem(problemFiles[idx]);
+    } else if (problemFiles.includes(defaultArg)) {
+      runProblem(defaultArg);
+    } else {
+      console.log('\n❌ Lựa chọn không hợp lệ!');
+    }
+    if (rl) rl.close();
+    return;
+  }
+
   const rlInstance =
     rl ||
     readline.createInterface({
       input: process.stdin,
       output: process.stdout,
     });
-
-  if (problemFiles.length === 0) {
-    console.log('\n❌ Không có file .ts nào trong thư mục problem/');
-    rlInstance.close();
-    return;
-  }
 
   console.log('\n📚 [Problem] Các file hiện có:');
   const formattedProblems = problemFiles.map(
@@ -124,9 +138,11 @@ function promptUser() {
 }
 
 const inputArg = process.argv[2];
+const secondArg = process.argv[3];
+
 if (inputArg) {
   if (inputArg.toLowerCase() === 'p') {
-    handleProblemSelection();
+    handleProblemSelection(undefined, secondArg);
   } else if (!run(inputArg)) {
     process.exit(1);
   }
