@@ -40,6 +40,13 @@ ${colors.bright}${colors.magenta}🛠 4. TIỆN ÍCH (UTILITIES)${colors.reset}
   ${colors.yellow}npm run fm${colors.reset}       Format toàn bộ project bằng Prettier.
   ${colors.yellow}npm run man${colors.reset}      Hiển thị bảng hướng dẫn này.
 
+${colors.bright}${colors.magenta}🐛 5. HƯỚNG DẪN DEBUG VỚI VS CODE${colors.reset}
+   Hệ thống đã được thiết lập Launch Configurations. Để debug:
+   1. Mở file cần debug (trong ./leetcode hoặc ./problem) và đặt Breakpoint (dấu chấm đỏ).
+   2. Chuyển sang tab "Run and Debug" trên VS Code (Cmd + Shift + D | F5).
+   3. Chọn cấu hình ${colors.cyan}"Debug Current LeetCode File"${colors.reset}.
+   4. Nhấn F5 (nút Play). VS Code sẽ tự động chạy file đang mở.
+
 ${colors.bright}${colors.cyan}====================================================
 💡 LỜI KHUYÊN DÀNH CHO BẠN:
 1. Khi học cấu trúc dữ liệu mới, hãy tạo folder trong ./problem.

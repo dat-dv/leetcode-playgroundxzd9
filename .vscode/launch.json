@@ -17,7 +17,15 @@
       "name": "Debug LeetCode by ID (npm run dev)",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev", "--", "${command:AskForChallengeID}"],
-      "console": "integratedTerminal"
+      "console": "integratedTerminal",
+      "autoAttachChildProcesses": true
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Attach to Running Debug Process",
+      "port": 9229,
+      "skipFiles": ["<node_internals>/**"]
     }
   ]
 }
