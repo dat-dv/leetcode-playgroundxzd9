@@ -19,6 +19,7 @@ import TreePrinter from './utils/printer';
  *    + Độ cao của cây sẽ được tối ưu ở mức O(log N)
  *    + Ở ví dụ trên, chúng ta sẽ tạo ra cây có độ cao 4 (tương đương xấp xỉ log2(8) + 1 tầng)
  *
+ *
  */
 
 const buildTree = (nums: number[]): TreeNode | null => {
@@ -39,4 +40,4 @@ const buildTree = (nums: number[]): TreeNode | null => {
 
 const input = [-10, -3, 0, 2, 5, 7, 9, 13];
 const tree = buildTree(input);
-TreePrinter.print(tree, 'array-to-bst');
+TreePrinter.print(tree, 'sorted-array-to-bst');
