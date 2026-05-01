@@ -1,5 +1,5 @@
-import TreeNode from './utils/tree-node';
-import TreePrinter from './utils/printer';
+import TreeNode from '../utils/tree-node';
+import TreePrinter from '../utils/printer';
 
 /**
  * Cây BST được tạo ra từ mảng đã sắp xếp [-10, -3, 0, 2, 5, 7, 9, 13] bằng thuật toán chia để trị

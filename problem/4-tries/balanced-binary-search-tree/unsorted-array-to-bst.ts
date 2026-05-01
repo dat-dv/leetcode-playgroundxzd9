@@ -1,11 +1,12 @@
-import TreeNode from './utils/tree-node';
-import TreePrinter from './utils/printer';
+import TreeNode from '../utils/tree-node';
+import TreePrinter from '../utils/printer';
 
 const input = [2, -10, 9, -3, 0, 13, 5, 7];
-const tree = buildTree(input);
+const tree = buildBalancedBST(input);
 TreePrinter.print(tree, 'unsorted-array-to-bst');
+TreePrinter.printConsole(tree);
 
-// Cách 1: insert từng phần tử (Thực hành: LC 701)
+// Cách 1: khi insert vào mà muốn cây luôn cân bằng thì cần phải sử dụng thuật toán AVL Tree, cách này sẽ phức tạp hơn so với việc sort rồi build balanced BST
 // Cách 2: sort rồi build balanced BST (cách này sẽ dùng arr.sort() xong rồi implement như ví dụ sorted-array-to-bst)
 
 /**
@@ -17,25 +18,21 @@ TreePrinter.print(tree, 'unsorted-array-to-bst');
  * - LC 1382 (Medium): Balance a Binary Search Tree -> Cho cây lệch, yêu cầu xếp lại thành cây cân bằng (Ứng dụng kết hợp In-order duyệt ra mảng tăng dần + LC 108 để dựng lại cây).
  */
 
-function insert(root: TreeNode | null, val: number): TreeNode {
-  if (!root) return new TreeNode(val);
-
-  if (val < root.data) {
-    root.left = insert(root.left, val);
-  } else {
-    root.right = insert(root.right, val);
-  }
-
-  return root;
-}
-
-function buildTree(arr: number[]): TreeNode | null {
+function buildBalancedBST(arr: number[]): TreeNode | null {
   if (arr.length === 0) return null;
+  arr.sort((a, b) => a - b);
 
-  const root = new TreeNode(arr[0]);
-  for (let i = 1; i < arr.length; i++) {
-    insert(root, arr[i]);
-  }
+  const execute = (left: number, right: number): TreeNode | null => {
+    if (left > right) return null;
 
-  return root;
+    const mid = Math.floor(left - (left - right) / 2);
+    const node = new TreeNode(arr[mid]);
+
+    node.left = execute(left, mid - 1);
+    node.right = execute(mid + 1, right);
+
+    return node;
+  };
+
+  return execute(0, arr.length - 1);
 }

@@ -69,3 +69,20 @@ const initBST = () => {
 
 const root = initBST();
 TreePrinter.print(root, 'search-value-in-bst');
+
+function search(root: TreeNode | null, data: number) {
+  const rounds = [];
+  while (root !== null) {
+    rounds.push(root.data);
+    if (root.data === data) return rounds;
+
+    if (root.data > data) root = root.left;
+    else root = root.right;
+  }
+
+  return [];
+}
+
+const rounds = search(root, 622);
+TreePrinter.printConsole(root);
+console.log(`Find 622 ->  ${JSON.stringify(rounds)}`);
