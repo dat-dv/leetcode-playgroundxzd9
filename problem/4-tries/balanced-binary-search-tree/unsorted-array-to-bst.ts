@@ -18,6 +18,11 @@ TreePrinter.printConsole(tree);
  * - LC 1382 (Medium): Balance a Binary Search Tree -> Cho cây lệch, yêu cầu xếp lại thành cây cân bằng (Ứng dụng kết hợp In-order duyệt ra mảng tăng dần + LC 108 để dựng lại cây).
  */
 
+/**
+ * Cách làm này có 1 hạn ché là chúng ta chỉ build được từ arr thành cây
+ * - Muốn insert/delete 1 node vào mà vẫn đảm bảo balanced thì khó cần cách tiếp cập khác
+ */
+
 function buildBalancedBST(arr: number[]): TreeNode | null {
   if (arr.length === 0) return null;
   arr.sort((a, b) => a - b);
