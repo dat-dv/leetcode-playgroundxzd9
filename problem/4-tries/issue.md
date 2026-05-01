@@ -14,6 +14,8 @@ issueId: 10
 - HashSet : Access O(1) | Insert/Delete O(1) → ❌ Tương tự HashMap, không hỗ trợ prefix
 - BST : Access O(logN) | Insert/Delete O(logN) → ✔ Có thứ tự nhưng ❌ không tối ưu cho string và prefix (so sánh từng ký tự)
 
+  ![alt text](image.png)
+
 ### 💡 2. PATTERN QUESTIONS (Các bài toán vận dụng)
 
 - Từ điển có wildcard: tìm với ký tự "\*"
@@ -21,4 +23,4 @@ issueId: 10
 
 ### 🔗 3. REFERENCE
 
-- Tài liệu tham khảo, bài viết hoặc video hướng dẫn.
+- https://www.w3schools.com/dsa/dsa_algo_binarytrees_preorder.php

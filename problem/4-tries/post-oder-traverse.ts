@@ -28,20 +28,19 @@ const initTree = () => {
 const root = initTree();
 TreePrinter.print(root, 'post-oder-traverse');
 
-class Solution {
-  execute(node: TreeNode) {
-    const output: string[] = [];
-    this.traverse(node, output);
-    console.log('Post-order Tree: ', output.join(' -> '));
-  }
-  traverse(node: TreeNode | null, output: string[]) {
+const traverse = (node: TreeNode) => {
+  const postOrderOutput: string[] = [];
+  const excute = (node: TreeNode) => {
     if (node == null) return;
-    this.traverse(node.left, output); // Left
-    this.traverse(node.right, output); // Right
-    output.push(node.data); // Root
-  }
-}
+    excute(node.left);
+    excute(node.right);
+    postOrderOutput.push(node.data);
+  };
 
-const solution = new Solution();
+  excute(node);
+  console.log('Post-order Tree: ', postOrderOutput.join(' -> '));
 
-solution.execute(root);
+  return postOrderOutput;
+};
+
+traverse(root);

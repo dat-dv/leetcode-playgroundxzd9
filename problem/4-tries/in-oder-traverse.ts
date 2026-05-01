@@ -1,3 +1,4 @@
+import { printer } from 'prettier/doc.js';
 import TreePrinter from './utils/printer';
 import TreeNode from './utils/tree-node';
 
@@ -28,21 +29,20 @@ const initTree = () => {
 const root = initTree();
 TreePrinter.print(root, 'in-oder-traverse');
 
-class Solution {
-  execute(node: TreeNode) {
-    const output: string[] = [];
-    this.traverse(node, output);
+const traverse = (node: TreeNode | null) => {
+  const inOrderOutput = [];
+  const execute = (node: TreeNode | null) => {
+    if (node === null) return null;
 
-    console.log('In-order Tree: ', output.join(' -> '));
-  }
-  traverse(node: TreeNode | null, output: string[]) {
-    if (node == null) return;
-    this.traverse(node.left, output); // Left
-    output.push(node.data); // Root
-    this.traverse(node.right, output); // Right
-  }
-}
+    execute(node.left, inOrderOutput);
+    inOrderOutput.push(node.data);
+    execute(node.right, inOrderOutput);
+  };
 
-const solution = new Solution();
+  execute(node);
+  return inOrderOutput;
+};
 
-solution.execute(root);
+const output = traverse(root);
+TreePrinter.printConsole(root);
+console.log('In-order Traversal: ', output.join(' -> '));

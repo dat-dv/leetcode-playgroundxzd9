@@ -25,6 +25,58 @@ export default class TreePrinter {
     this.exportSVG(root, filePath);
   }
 
+  static printConsole(root: TreeNode | null) {
+    if (!root) {
+      console.log('Empty tree');
+      return;
+    }
+
+    const _print = (
+      node: TreeNode,
+      prefix: string,
+      isTail: boolean,
+      isLeft: boolean,
+      isRoot: boolean
+    ) => {
+      // Hỗ trợ cả node.val (LeetCode) và node.data (Custom)
+      const value =
+        'val' in node && (node as any).val !== undefined
+          ? (node as any).val
+          : (node as any).data;
+
+      if (isRoot) {
+        console.log(value);
+      } else {
+        const branch = isTail ? '└── ' : '├── ';
+        const side = isLeft ? 'L: ' : 'R: ';
+        console.log(`${prefix}${branch}${side}${value}`);
+      }
+
+      const nextPrefix = prefix + (isRoot ? '' : isTail ? '    ' : '│   ');
+
+      // Nếu có ít nhất 1 node con thì in ra
+      if (node.left || node.right) {
+        // In nhánh Left
+        if (node.left) {
+          _print(node.left, nextPrefix, node.right === null, true, false);
+        } else {
+          console.log(
+            `${nextPrefix}${node.right === null ? '└── ' : '├── '}L: null`
+          );
+        }
+
+        // In nhánh Right
+        if (node.right) {
+          _print(node.right, nextPrefix, true, false, false);
+        } else {
+          console.log(`${nextPrefix}└── R: null`);
+        }
+      }
+    };
+
+    _print(root, '', true, true, true);
+  }
+
   private static exportSVG(root: TreeNode | null, filePath: string) {
     if (!root) return;
 

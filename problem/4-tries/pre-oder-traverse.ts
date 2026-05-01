@@ -28,21 +28,18 @@ const initTree = () => {
 const root = initTree();
 TreePrinter.print(root, 'pre-oder-traverse');
 
-class Solution {
-  execute(node: TreeNode) {
-    const output: string[] = [];
-    this.traverse(node, output);
-
-    console.log('Tree: ', output.join(' -> '));
-  }
-  traverse(node: TreeNode | null, output: string[]) {
+const traverse = (node: TreeNode | null) => {
+  const output: string[] = [];
+  const excute = (node: TreeNode) => {
     if (node == null) return;
     output.push(node.data);
-    this.traverse(node.left, output);
-    this.traverse(node.right, output);
-  }
-}
+    excute(node.left);
+    excute(node.right);
+  };
 
-const solution = new Solution();
+  excute(node);
+  return output;
+};
 
-solution.execute(root);
+const result = traverse(root);
+console.log('Pre-order Traversal: ', result.join(' -> '));
