@@ -1,0 +1,7 @@
+{
+  "id": "104",
+  "title": "Maximum Depth of Binary Tree",
+  "difficulty": "Easy",
+  "tags": ["Tree", "Depth-First Search", "Breadth-First Search", "Binary Tree"],
+  "link": "https://leetcode.com/problems/maximum-depth-of-binary-tree/"
+}
