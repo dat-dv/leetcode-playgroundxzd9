@@ -71,5 +71,6 @@ Xem chi tiết trong file [WORKFLOW.md](./WORKFLOW.md).
 | 25  | [Relative Sort Array](./leetcode/1122)                                  | Easy   | Array, Hash Table, Sorting, Counting Sort                                                                 | [LeetCode](https://leetcode.com/problems/relative-sort-array/)                                  |
 | 26  | [How Many Numbers Are Smaller Than the Current Number](./leetcode/1365) | Easy   | Array, Hash Table, Sorting, Counting Sort                                                                 | [LeetCode](https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/) |
 | 27  | [Find Target Indices After Sorting Array](./leetcode/2089)              | Easy   | Array, Binary Search, Sorting                                                                             | [LeetCode](https://leetcode.com/problems/find-target-indices-after-sorting-array/)              |
+| 28  | [Interval Cancellation](./leetcode/2725)                                | Easy   |                                                                                                           | [LeetCode](https://leetcode.com/problems/interval-cancellation/)                                |
 
 <!-- LEETCODE_END -->
