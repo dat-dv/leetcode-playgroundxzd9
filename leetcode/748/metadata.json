@@ -1,0 +1,7 @@
+{
+  "id": "748",
+  "title": "Shortest Completing Word",
+  "difficulty": "Easy",
+  "tags": ["Array", "Hash Table", "String"],
+  "link": "https://leetcode.com/problems/shortest-completing-word/"
+}
