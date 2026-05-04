@@ -1,0 +1,7 @@
+{
+  "id": "143",
+  "title": "Reorder List",
+  "difficulty": "Medium",
+  "tags": ["Linked List", "Two Pointers", "Stack", "Recursion"],
+  "link": "https://leetcode.com/problems/reorder-list/"
+}
